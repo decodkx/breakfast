@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class walk : MonoBehaviour
 {
-    int v, h;
+    int v, h;                       //horizontal and vertical movements
     int timer = 1000;
-    public int timerDuration = 30;
+    public int timerDuration = 30;  // duration of wait between movements
     bool walkCooldown = false;
+
+    public static int energy =7;                    // quantity of spaces a player can move
+    public Text energyIndicator;
     void Start()
     {
         
@@ -15,7 +19,7 @@ public class walk : MonoBehaviour
 
     void Update()
     {
-         
+        energyIndicator.text = energy.ToString();
         
         if(timer < 1000)
         {
@@ -55,11 +59,15 @@ public class walk : MonoBehaviour
 
     private void Move()
     {
-        walkCooldown = true;
-        timer = timerDuration;
-        Vector3 steps = new Vector3(h, 0, v); 
-        transform.position += steps;
-        h = 0;
-        v = 0;
+        if(energy > 0)
+        {
+            walkCooldown = true;
+            timer = timerDuration;
+            energy--;
+            Vector3 steps = new Vector3(h, 0, v);
+            transform.position += steps;
+            h = 0;
+            v = 0;
+        }
     }
 }
