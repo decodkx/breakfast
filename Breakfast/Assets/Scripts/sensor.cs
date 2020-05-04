@@ -20,8 +20,8 @@ public class sensor : MonoBehaviour
     }
 
     private void OnTriggerEnter (Collider col)
-    {        
-        if(col.tag == "Player")
+    {
+        if (col.tag == "Wall")
             switch (this.name)
             {
                 case "Top":
@@ -41,7 +41,7 @@ public class sensor : MonoBehaviour
 
     private void OnTriggerExit (Collider col)
     {
-        if (col.tag == "Player")
+        if (col.tag == "Wall")
         {
             switch (this.name)
             {
