@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class sensor : MonoBehaviour
 {
-    public static bool north= false;
+    public static bool north= false;     // bools, quando verdadeiros, mostram objetos na direção e impedem movimento
     public static bool south= false;
     public static bool east = false;
     public static bool west = false;
+
+    int ny, sy, wy, ey;
     void Start()
     {
         
@@ -37,6 +39,7 @@ public class sensor : MonoBehaviour
                     east = true;
                     break;
             }
+
     }
 
     private void OnTriggerExit (Collider col)
@@ -62,3 +65,5 @@ public class sensor : MonoBehaviour
             
     }
 }
+
+

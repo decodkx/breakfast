@@ -20,7 +20,7 @@ public class energyItem : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            walk.energy = 7;
+            walk.energy = 700;
             Destroy(gameObject);
         }
     }
