@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/3DYogurt.unity
+    guid: e594dad36dadbdb468b02c597f31d782
   m_configObjects: {}
