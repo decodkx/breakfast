@@ -15,6 +15,7 @@ public class walk : MonoBehaviour
     Vector3 steps;                                //movement direction
     Vector3 fixer = new Vector3(1, 0, 0);         //temp:: need to find error and delete crutch
     int dash = 1;                                //movement multiplier
+    bool dashOn = false;
 
     GameObject spriteR;
     public GameObject ySensor;
@@ -39,8 +40,18 @@ public class walk : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            dash = 2;
+            dashOn = !dashOn;
         }
+
+        switch(dashOn)
+        {
+            case true:
+                dash = 2;
+                break;
+            case false:
+                dash = 1;
+                break;
+        }    
 
 
        if(!walkCooldown)
@@ -77,6 +88,7 @@ public class walk : MonoBehaviour
     public void Move(float alt)
     {
         dash = 1;
+        dashOn = false;
         if (energy > 0)
         {
             walkCooldown = true;

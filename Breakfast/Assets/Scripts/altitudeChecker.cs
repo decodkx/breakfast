@@ -16,7 +16,7 @@ public class altitudeChecker : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider col)
-    {
+    {   
         if(col.tag == "N1")
         {
             Debug.Log("N1");
