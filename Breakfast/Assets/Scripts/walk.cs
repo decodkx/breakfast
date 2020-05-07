@@ -10,7 +10,7 @@ public class walk : MonoBehaviour
     public int timerDuration = 30;  // duration of wait between movements
     bool walkCooldown = false;
 
-    public static int energy =70;                    // quantity of spaces a player can move
+    public static int energy = 70;                    // quantity of spaces a player can move
     public Text energyIndicator;
     Vector3 steps;                                //movement direction
     Vector3 fixer = new Vector3(1, 0, 0);         //temp:: need to find error and delete crutch
@@ -26,24 +26,24 @@ public class walk : MonoBehaviour
     void Update()
     {
         energyIndicator.text = energy.ToString();
-        
-        if(timer < 1000)
+
+        if (timer < 1000)
         {
             timer--;
-            if(timer < 0)
+            if (timer < 0)
             {
                 walkCooldown = false;
                 timer = 1000;
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             dash = 2;
         }
 
 
-       if(!walkCooldown)
+        if (!walkCooldown)
         {
             if (Input.GetKeyDown(KeyCode.W) && !sensor.north)
             {

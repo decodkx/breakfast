@@ -2825,7 +2825,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8, y: 1, z: 1}
+  m_Size: {x: 8, y: 10, z: 1}
   m_Center: {x: 3.5, y: 1, z: -7}
 --- !u!1 &568860282
 GameObject:
@@ -4817,7 +4817,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 7}
+  m_Size: {x: 1, y: 10, z: 7}
   m_Center: {x: -1, y: 1, z: -3}
 --- !u!1 &1205210221
 GameObject:
@@ -5418,7 +5418,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6341,7 +6340,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 7}
+  m_Size: {x: 1, y: 10, z: 7}
   m_Center: {x: 8, y: 1, z: -3}
 --- !u!1 &1695027821
 GameObject:
@@ -8513,7 +8512,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8, y: 1, z: 1}
+  m_Size: {x: 8, y: 10, z: 1}
   m_Center: {x: 3.5, y: 1, z: 1}
 --- !u!1001 &3923580581935243965
 PrefabInstance:
