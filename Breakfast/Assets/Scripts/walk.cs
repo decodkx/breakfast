@@ -16,10 +16,11 @@ public class walk : MonoBehaviour
     Vector3 fixer = new Vector3(1, 0, 0);         //temp:: need to find error and delete crutch
     int dash = 1;                                //movement multiplier
 
+    GameObject spriteR;
     public GameObject ySensor;
     void Start()
     {
-
+        spriteR = GameObject.Find("Sprite");
     }
 
     void Update()
@@ -34,6 +35,11 @@ public class walk : MonoBehaviour
                 walkCooldown = false;
                 timer = 1000;
             }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            dash = 2;
         }
 
 
@@ -68,15 +74,16 @@ public class walk : MonoBehaviour
         Instantiate<GameObject>(ySensor, transform.position + future + fixer, Quaternion.identity);
 
     }
-    public void Move(Vector3 alt)
+    public void Move(float alt)
     {
-        Debug.Log(alt);
+        dash = 1;
         if (energy > 0)
         {
             walkCooldown = true;
             timer = timerDuration;
             energy--;
-            transform.position = new Vector3(transform.position.x, alt.y, transform.position.z + alt.z);
+            transform.position = new Vector3(transform.position.x, alt, transform.position.z);
+            //spriteR.transform.position += new Vector3(0, 0, alt.z);
             transform.position += steps; // + last;
             steps = Vector3.zero;
         }
