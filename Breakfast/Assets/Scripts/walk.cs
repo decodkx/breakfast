@@ -17,6 +17,13 @@ public class walk : MonoBehaviour
     int dash = 1;                                //movement multiplier
     bool dashOn = false;
 
+    #region
+    public sensor sensorTop;
+    public sensor sensorBottom;
+    public sensor sensorLeft;
+    public sensor sensorRight;
+    #endregion
+
     GameObject spriteR;
     public GameObject ySensor;
     void Start()
@@ -86,9 +93,7 @@ public class walk : MonoBehaviour
 
     }
     public void Move(float alt)
-    {
-        dash = 1;
-        dashOn = false;
+    {      
         if (energy > 0)
         {
             walkCooldown = true;
@@ -98,6 +103,18 @@ public class walk : MonoBehaviour
             //spriteR.transform.position += new Vector3(0, 0, alt.z);
             transform.position += steps; // + last;
             steps = Vector3.zero;
+
+            if (dashOn)
+            {
+                sensorTop.Reset();
+                sensorBottom.Reset();
+                sensorLeft.Reset();
+                sensorRight.Reset();
+
+                dash = 1;
+                dashOn = false;
+            }
         }
+
     }
 }

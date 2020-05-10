@@ -10,17 +10,19 @@ public class sensor : MonoBehaviour
     public static bool east = false;
     public static bool west = false;
 
-    bool dashOn;
+    public walk walkScript;
+    bool dashOn = false;
+
     int ny, sy, wy, ey;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             dashOn = !dashOn;
             DashType();
@@ -29,16 +31,21 @@ public class sensor : MonoBehaviour
 
     private void DashType()
     {
-        Debug.Log("once?");
         switch (dashOn)
         {
             case true:
-                transform.position = transform.position*2;
+                transform.localPosition *= 2;
                 break;
             case false:
-                transform.position = transform.position/2;
+                transform.localPosition /= 2;
                 break;
         }
+    }
+
+    public void Reset()
+    {
+        dashOn = false;
+        DashType();
     }
 
     private void OnTriggerEnter (Collider col)

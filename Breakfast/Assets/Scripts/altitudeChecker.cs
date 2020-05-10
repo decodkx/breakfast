@@ -36,10 +36,11 @@ public class altitudeChecker : MonoBehaviour
         Do();
     }
 
-
     private void Do()
     {
         walkScript.Move(altitude);
+                
+        
         Destroy(gameObject);
     }
 }
