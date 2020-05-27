@@ -43,9 +43,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3923580581317573071}
   - component: {fileID: 3923580581317573068}
+  - component: {fileID: 6391328039730501806}
   m_Layer: 0
   m_Name: butterbody
-  m_TagString: Untagged
+  m_TagString: DN1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 3923580581317573069}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.25599998, z: -0.379}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 3923580581126381373}
   m_RootOrder: 1
@@ -114,6 +115,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &6391328039730501806
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3923580581317573069}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0.3, z: 0.09}
 --- !u!1 &3923580582258254473
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +154,7 @@ Transform:
   m_GameObject: {fileID: 3923580582258254473}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0.396, y: -0.25599998, z: 0.019}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 3923580581126381373}
   m_RootOrder: 2
@@ -223,7 +237,7 @@ Transform:
   m_GameObject: {fileID: 3923580582576208463}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.024, z: -0.019}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 3923580581126381373}
   m_RootOrder: 0
@@ -289,8 +303,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1, z: 1.5}
-  m_Center: {x: 0, y: 0, z: -0.24}
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0.09}
 --- !u!54 &8810624917676937062
 Rigidbody:
   m_ObjectHideFlags: 0
