@@ -98,7 +98,7 @@ public class walk : MonoBehaviour
         {
             walkCooldown = true;
             timer = timerDuration;
-            energy--;
+            energy -= 1 * dash;
             transform.position = new Vector3(transform.position.x, alt, transform.position.z);
             //spriteR.transform.position += new Vector3(0, 0, alt.z);
             transform.position += steps; // + last;

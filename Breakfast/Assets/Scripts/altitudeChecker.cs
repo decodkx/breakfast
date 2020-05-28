@@ -7,7 +7,6 @@ public class altitudeChecker : MonoBehaviour
     float altitude;
     public GameObject player;
     walk walkScript;
-    bool lockV = false;
     
     void Start()
     {
@@ -18,47 +17,31 @@ public class altitudeChecker : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        //if(!lockV)
-        //{
-        if (col.tag == "N0")
+        if (col.tag == "N1")
+        {
+            Debug.Log("N1");
+            altitude = 1.42f;
+            Do();
+        }
+        else if (col.tag == "N2")
+        {
+            Debug.Log("N2");
+            altitude = 1.68f;
+            Do();
+        }
+        else if (col.tag == "N0")
         {
             altitude = 1.04f;
+            Debug.Log("N0");
             Do();
-            Debug.Log(col.tag);
-            lockV = true;
-        }
-
-        else if (col.tag == "N2")
-            {
-                altitude = 1.68f;
-                Do();
-                Debug.Log(col.tag);
-                lockV = true;
-            }
-            else if (col.tag == "N1")
-            {
-                altitude = 1.42f;
-                Do();
-                Debug.Log(col.tag);
-                lockV = true;
-            }
-            if (col.tag == "DN1")
-            {
-                altitude = 1.42f;
-                Do();
-                Debug.Log(col.tag);
-                lockV = true;
-            }
-
-
-            Do();
-        //}
+        }        
     }
-
 
     private void Do()
     {
         walkScript.Move(altitude);
-        Destroy(gameObject);        
+                
+        
+        Destroy(gameObject);
     }
 }

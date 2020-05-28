@@ -8,7 +8,6 @@ TagManager:
   - N1
   - N2
   - N0
-  - DN1
   layers:
   - Default
   - TransparentFX
