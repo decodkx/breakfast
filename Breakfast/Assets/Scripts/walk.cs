@@ -10,7 +10,7 @@ public class walk : MonoBehaviour
     public int timerDuration = 30;  // duration of wait between movements
     bool walkCooldown = false;
 
-    public static int energy = 70;                    // quantity of spaces a player can move
+    //public static int energy = 70;                    // quantity of spaces a player can move
     public Text energyIndicator;
     Vector3 steps;                                //movement direction
     Vector3 fixer = new Vector3(1, 0, 0);         //temp:: need to find error and delete crutch
@@ -26,14 +26,18 @@ public class walk : MonoBehaviour
 
     GameObject spriteR;
     public GameObject ySensor;
+
+    private Personagem personagem = new Personagem();
+
     void Start()
     {
         spriteR = GameObject.Find("Sprite");
+        personagem.Steps = 71;
     }
 
     void Update()
     {
-        energyIndicator.text = energy.ToString();
+        energyIndicator.text = personagem.Steps.ToString();
 
         if (timer < 1000)
         {
@@ -94,11 +98,11 @@ public class walk : MonoBehaviour
     }
     public void Move(float alt)
     {      
-        if (energy > 0)
+        if (personagem.Steps > 0)
         {
             walkCooldown = true;
             timer = timerDuration;
-            energy -= 1 * dash;
+            personagem.Steps -= 1 * dash;
             transform.position = new Vector3(transform.position.x, alt, transform.position.z);
             //spriteR.transform.position += new Vector3(0, 0, alt.z);
             transform.position += steps; // + last;

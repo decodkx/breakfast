@@ -7,6 +7,7 @@ public class altitudeChecker : MonoBehaviour
     float altitude;
     public GameObject player;
     walk walkScript;
+    int timer = 5;
     
     void Start()
     {
@@ -19,22 +20,26 @@ public class altitudeChecker : MonoBehaviour
     {
         if (col.tag == "N1")
         {
-            Debug.Log("N1");
             altitude = 1.42f;
             Do();
         }
         else if (col.tag == "N2")
         {
-            Debug.Log("N2");
             altitude = 1.68f;
             Do();
         }
-        else if (col.tag == "N0")
+    }
+    void Update()
+    {
+        if (timer < 1000)
         {
-            altitude = 1.04f;
-            Debug.Log("N0");
-            Do();
-        }        
+            timer--;
+            if (timer < 0)
+            {
+                altitude = 1.04f;
+                Do();
+            }
+        }
     }
 
     private void Do()

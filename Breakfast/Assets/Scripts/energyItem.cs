@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class energyItem : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Personagem personagem = new Personagem();
+
     void Start()
     {
         
@@ -20,7 +21,7 @@ public class energyItem : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            walk.energy = 700;
+            personagem.Steps += 700;
             Destroy(gameObject);
         }
     }

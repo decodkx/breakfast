@@ -8,6 +8,7 @@ TagManager:
   - N1
   - N2
   - N0
+  - Floor
   layers:
   - Default
   - TransparentFX

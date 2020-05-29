@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Personagem : MonoBehaviour
+public class Personagem
 {
-    // Start is called before the first frame update
-    private float stepsNumber;
     private int lives;
+    private int steps;
+
+    private float stepsNumber;    
     private Transform position;
     
     public float getStepsNumber()
@@ -16,20 +17,36 @@ public class Personagem : MonoBehaviour
     }
 
 
-    public int getLives()
+    public int Lives
     {
-        return lives;
+        get
+        {
+            return lives;
+        }
+        set
+        {
+            lives = value;
+        }
+    }
+
+    public int Altitude { get; set; }
+ 
+    public int Steps
+    {
+        get
+        {
+            return steps;
+        }
+        set
+        {
+            steps = value;
+            Debug.Log(steps);
+        }
     }
 
     public void setStepsNumber(float stepsNumber)
     {
         this.stepsNumber =+ stepsNumber;
-    }
-    
-    
-    public void setLives(int lives)
-    {
-        this.lives = lives;
     }
 
     public Transform getPosition()
