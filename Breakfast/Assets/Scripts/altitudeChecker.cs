@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class altitudeChecker : MonoBehaviour
 {
+    public CD m;
     float altitude;
-    public GameObject player;
     walk walkScript;
     int timer = 5;
     
     void Start()
     {
-        player = GameObject.Find("Player");
-        walkScript = player.GetComponent<walk>();
-        altitude = 1.04f;
+        m = GameObject.FindGameObjectWithTag("GM").GetComponent<CD>();
+        walkScript = GameObject.Find("Player").GetComponent<walk>(); 
     }
 
     private void OnTriggerEnter(Collider col)
@@ -21,11 +20,13 @@ public class altitudeChecker : MonoBehaviour
         if (col.tag == "N1")
         {
             altitude = 1.42f;
+            m.Place = 1;
             Do();
         }
         else if (col.tag == "N2")
         {
             altitude = 1.68f;
+            m.Place = 2;
             Do();
         }
     }
@@ -37,6 +38,7 @@ public class altitudeChecker : MonoBehaviour
             if (timer < 0)
             {
                 altitude = 1.04f;
+                m.Place = 0;
                 Do();
             }
         }

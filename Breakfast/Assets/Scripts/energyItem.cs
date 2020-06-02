@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class energyItem : MonoBehaviour
 {
-    private Personagem personagem = new Personagem();
-
+    public CD m;
     void Start()
     {
-        
+        m = GameObject.FindGameObjectWithTag("GM").GetComponent<CD>();
     }
 
     // Update is called once per frame
@@ -21,7 +20,7 @@ public class energyItem : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            personagem.Steps += 700;
+            m.Steps += 700;
             Destroy(gameObject);
         }
     }

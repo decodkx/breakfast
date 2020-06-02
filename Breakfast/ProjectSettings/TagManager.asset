@@ -9,6 +9,7 @@ TagManager:
   - N2
   - N0
   - Floor
+  - GM
   layers:
   - Default
   - TransparentFX

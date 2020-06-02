@@ -27,17 +27,19 @@ public class walk : MonoBehaviour
     GameObject spriteR;
     public GameObject ySensor;
 
-    private Personagem personagem = new Personagem();
+    //private Personagem personagem = new Personagem();
+    public CD m;
 
     void Start()
     {
+        m = GameObject.FindGameObjectWithTag("GM").GetComponent<CD>();
         spriteR = GameObject.Find("Sprite");
-        personagem.Steps = 71;
+        m.Steps = 71;
     }
 
     void Update()
     {
-        energyIndicator.text = personagem.Steps.ToString();
+        energyIndicator.text = m.Steps.ToString();
 
         if (timer < 1000)
         {
@@ -98,11 +100,11 @@ public class walk : MonoBehaviour
     }
     public void Move(float alt)
     {      
-        if (personagem.Steps > 0)
+        if (m.Steps > 0)
         {
             walkCooldown = true;
             timer = timerDuration;
-            personagem.Steps -= 1 * dash;
+            m.Steps -= 1 * dash + m.energyfee;
             transform.position = new Vector3(transform.position.x, alt, transform.position.z);
             //spriteR.transform.position += new Vector3(0, 0, alt.z);
             transform.position += steps; // + last;

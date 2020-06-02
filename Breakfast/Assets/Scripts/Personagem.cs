@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 public class Personagem
-{
+{ 
+    /*
     private int lives;
     private int steps;
 
@@ -58,6 +59,5 @@ public class Personagem
     {
         this.position = position;
     }
-
-
+    */
 }
