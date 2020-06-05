@@ -34,7 +34,7 @@ public class walk : MonoBehaviour
     {
         m = GameObject.FindGameObjectWithTag("GM").GetComponent<CD>();
         spriteR = GameObject.Find("Sprite");
-        m.Steps = 71;
+        m.Steps = 5;
     }
 
     void Update()
@@ -100,14 +100,13 @@ public class walk : MonoBehaviour
     }
     public void Move(float alt)
     {      
-        if (m.Steps > 0)
+        if (m.Steps - m.energyfee > 0)
         {
             walkCooldown = true;
             timer = timerDuration;
             m.Steps -= 1 * dash + m.energyfee;
             transform.position = new Vector3(transform.position.x, alt, transform.position.z);
-            //spriteR.transform.position += new Vector3(0, 0, alt.z);
-            transform.position += steps; // + last;
+            transform.position += steps; 
             steps = Vector3.zero;
 
             if (dashOn)
@@ -120,6 +119,10 @@ public class walk : MonoBehaviour
                 dash = 1;
                 dashOn = false;
             }
+        }
+        else
+        {
+            m.Place = m.oldPlace;
         }
 
     }

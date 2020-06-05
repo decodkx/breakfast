@@ -20,7 +20,7 @@ public class energyItem : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            m.Steps += 700;
+            m.Steps += 5;
             Destroy(gameObject);
         }
     }
