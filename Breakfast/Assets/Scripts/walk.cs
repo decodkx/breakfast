@@ -91,7 +91,16 @@ public class walk : MonoBehaviour
             }
         }
     }
-
+ /////TESTANDOOOO
+    public void WalkFront(){
+        if (!walkCooldown){
+            if (!sensor.south)
+            {
+                steps = new Vector3(0, 0, -1 * dash);
+                YCheck(steps);
+            }
+        }
+    }
 
     private void YCheck(Vector3 future)
     {
